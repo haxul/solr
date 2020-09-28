@@ -9,6 +9,9 @@ repositories {
 }
 dependencies {
     testImplementation 'org.jetbrains.kotlin:kotlin-test-junit5'
+    compile group: 'org.apache.solr', name: 'solr-solrj', version: '8.5.1'
+
+
 }
 compileKotlin {
     kotlinOptions.jvmTarget = '1.8'
