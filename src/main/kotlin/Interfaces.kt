@@ -32,16 +32,13 @@ data class Value(val text: String) : Expr()
 object NotANumber : Expr()
 
 
+fun printed(x: Int, f: (Int) -> String): String {
+    return "${f(x)} <- result";
+}
+
 fun main() {
-    val predicate = IntPredicate { i -> i == 10 }
+    val map = emptyMap<String, Int>().toMutableMap()
+    map["hello"] = 1
+    map["hello"] = 2
 
-    val list = MutableList(10) { it + 1 }
-    list.swap(0, 1)
-
-    val x: Expr = Const(10.1)
-    when (x) {
-        is Const -> print(x.number)
-        is Value -> print(x.text.toUpperCase())
-        NotANumber -> Double.NaN
-    }
 }
